@@ -1,12 +1,14 @@
-const Hijo = ({ Objdinero, setObjDinero }) => {
+import { useContext } from "react"
+import CasaContext from "../context/CasaProvider"
+
+const Hijo = () => {
+    const { ObjdineroContext, setObjDineroContext } = useContext(CasaContext)
 
     return (
         <>
             <div>C. Hijo</div>
-
-            <pre>{JSON.stringify(Objdinero, null, 1)}</pre>
-
-            <button onClick={() => { setObjDinero({ ...Objdinero, dinero: 0 }) }}
+            <pre>{JSON.stringify(ObjdineroContext, null, 1)}</pre>
+						<button onClick={() => { setObjDineroContext({ ...ObjdineroContext, lugar:"",dinero: 0 }) }}
                 className="btn btn-success w-full mt-2">Gastar</button>
         </>
     )
